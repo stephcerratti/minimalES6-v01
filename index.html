@@ -1,22 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Insert your title here</title>
-    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <meta charset="utf-8">
+    <title>Aloha Computers</title>
+<!-- ******************* FONTS **************** -->
+     <script src="https://use.fontawesome.com/5b03f1e1fd.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200i,400" rel="stylesheet">
+    <link rel="stylesheet" href="src/owl.carousel.min.css">
+    <link rel="stylesheet" href="src/owl.theme.default.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- ****************** CSS ******************* -->
+
+    <link rel="stylesheet" type="text/css" href="./dist/app.css">
+   
+    <!-- ********* JAVASCRIPT/JQUERY ************ -->
+  <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="main.js"></script> -->
+
+  
+<!-- **************** OWL CAROUSEL ******************* -->
+
 </head>
+
 <body>
-<h1>Hey! It's ES6</h1>
 
-<!-- test code -->
-<script>
-    let test = 'hello es6 world';
-    let square = x => x * x;
+    <header>
+        <div class="flex-container">
+            <div class="flex-item logo">
+                <img class="header-image logo-image" src="images/aloha-logo.svg" alt="Aloha Logo">
+            </div>
+            <div class="flex-item navbar">
+                <ul class="nav red-text uppercase clearfix">
+                    <li class="menu-item font-raleway">About</li>
+                    <li class="menu-item font-raleway">Shop</li>
+                    <li class="menu-item font-raleway">Featured</li>
+                    <li class="menu-item font-raleway">Updates</li>
+                </ul>
+            </div>
+            <div class="flex-item cart">
+                <input id="cartQuantity" type="text" name="cartIcon" value="0">
+                <img class="header-image cart-image" src="/images/cart-icon.svg">
+            </div>
+        </div>
+    </header>
 
-    console.log('square is ' + square);
-    console.log(test);
-</script>
-<!-- end code insert -->
+<main>
+
+<!--  ***********BANNER*********************** -->
+
+	<section class="banner background-image clearfix">
+		<div class="banner-girl"></div>
+			<div class="white-text banner-title center">
+				<h2 class="font-raleway med-text uppercase margin-bottom">New Collection</h2>
+				<h1 class="banner-title font-playfair">Spring/Summer 2016</h1>
+			</div>
+		</section>
+
+<!--  *******END BANNER********************************* -->
+
+<!--  **********CTA/ABOUT******************************* -->
+
+	<section class="cta section-format">
+			<h3 class="section-title font-playfair grey-text">Hand-Crafted <span class="bold unstyled">Styles</span></h3>
+			<p class="section-text med-grey-text font-raleway">Aloha Apparel Co. sells only the finest ready-to-travel clothing.  Browse our current selection of products or sign-up for updates below.</p>	
+	</section>
+
+<!-- ****************IMAGE LINKS**********************-->
+	<section class="categoryLinks">
+		<div class="category-container">
+			<div class="category-item mens rectangle category-background">
+				<h5 class="rectangle-text uppercase white-text font-raleway">Men's</h5>
+			</div>
+			<div class="category-item trends square category-background">
+				<h5 class="uppercase white-text font-raleway">Trends</h5>
+			</div>
+			<div class="category-item glasses square category-background">
+				<h5 class="uppercase white-text font-raleway">Glasses</h5>
+			</div>
+			<div class="category-item sale square category-background">
+				<h5 class="uppercase white-text font-raleway">Sale</h5>
+			</div>
+			<div class="category-item bags square category-background">
+				<h5 class="uppercase white-text font-raleway">Bags</h5>
+			</div>
+			<div class="category-item womens rectangle category-background">
+				<h5 class="rectangle-text uppercase white-text font-raleway">Women's</h5>
+			</div>
+		</div>
+	</section>
+
+<!-- **************** BEST BUY API CAROUSEL ******************* -->
+
+<section class="products section-format">
+	<h3 class="section-title font-playfair grey-text">Most-Loved <span class="bold unstyled">Products</span></h3>
+
+	<div class="owl-carousel owl-theme"></div>
+
+</section>
+
+<!--  ***********SUBSCRIBE******************** -->
+
+	<section class="signup background-image">
+		<div class="section-format">
+			<h3 class="section-title signup-title white-text font-playfair">Sign-up for <span class	="bold unstyled">Updates</span></h3>
+			<p class="white-text font-raleway section-text">Stay udated on our latest product releases, be the first to fndd out about upcoming sales, and get free style tips from our blog.  Unsubscribe at any time.</p>
+			<div class="sub-form clearfix">
+				<input class="left email-form" type="email" placeholder="Your Email">
+				<input class="subscribe right" type="submit" value="Subscribe">
+			</div>
+		</div>
+	</section>
+
+<!--  *******END SUBSCRIBE******************** -->
+
+<!--  ***********FOOTER*********************** -->
+
+<footer class="footer clearfix">
+
+	<div class="footer-section-right white-text clearfix icons center">
+		<ul class="social-icons">
+			<li class="icon left"><i class="fa fa-facebook icon" aria-hidden="true"></i><span class="hidden">Facebook</span></li>
+			<li class="icon left"><i class="fa fa-twitter icon" aria-hidden="true"></i><span class="hidden">Twitter</span></li>
+			<li class="icon left"><i class="fa fa-instagram icon" aria-hidden="true"></i><span class="hidden">Instagram</span></li>
+			<li class="icon left"><i class="fa fa-pinterest icon" aria-hidden="true"></i><span class="hidden">Pinterest</span></li>
+			<li class="icon left"><i class="fa fa-google-plus icon" aria-hidden="true"></i><span class="hidden">Google+</span></li>
+		</ul>
+	</div>
+
+
+
+
+
+<script src="./src/owl.carousel.min.js"></script>
 <script src="build/bundle.js"></script>
 </body>
 </html>

@@ -5,23 +5,18 @@
 // its like a launch pad, where you bring all your other classes
 // together for use.
 
-import Person from './Person';
-import Car from './Car';
 
-import Plane from './Plane';
+/* all the code that could be written here has
+been encapsulated (moved) into an 'App' class. the 'App' class
+is the application (i.e. your web site, the shopping cart project)
+itself. This is done for organization and cleanliness in code.
+So now you only see two lines here in index.js
+ */
+import App from './App';
+
+let app = new App();
 
 
-let edward = new Person("Edward");
-let eds_car = new Car("ford");
-
-edward.car = eds_car;
-edward.car.drive(edward);
-
-let cessna = new Plane("cessna","Boeing", 1972);
-console.log(cessna.name);
-console.log(cessna.year);
-console.log(cessna.manufacturer);
-cessna.fly();
 
 
 
