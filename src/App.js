@@ -20,10 +20,13 @@ export default class App {
         this.products = null; // stores specifically the products
         this.catalogView = new CatalogView(); // this will display our data
         this.shoppingCart = new ShoppingCart();
+        this.shoppingCartView = new ShoppingCartView();
         // this.
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
+        this.initShoppingCart();
+        // this.initShoppingCartView();
     }
 
     //in this init function
@@ -64,8 +67,7 @@ export default class App {
         }
 
         this.showCatalog();
-    }
-
+}
     showCatalog() {
 
         // populate the catalog only if there are products
@@ -74,12 +76,23 @@ export default class App {
             this.catalogView.addProductsToCarousel(this.products,this);
             // this.catalogView.showCatalog();
         }
-
-
     }
 
+    initShoppingCart() {
+        $(document).on('click', '.cart', this, function(event){
+            console.log(event.data);
+            let theApp = event.data;
+            theApp.shoppingCartView.showCartPopup(theApp.products);
+            $(".cartView").fadeIn();     
+        })
+         $(document).on('click', '.close', this, function(event){
+            $(".cartView").fadeOut();
+        }); 
+    }
 }
 
-
+ // event.data.theApp.ShoppingCart
+            // $("#div2").fadeIn("slow");
+            // $("#div3").fadeIn(3000);
 
 

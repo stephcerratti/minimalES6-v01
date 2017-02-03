@@ -65,9 +65,21 @@ export default class CatalogView{
         // this.theApp.shoppingCart.addItemToCart(theSku);
 
         return function(e){
-            console.log("ha ha ha ");
             console.log(theApp);
-            theApp.shoppingCart.addItemToCart(e.target.getAttribute("data-sku"));
+            let theSku = e.target.getAttribute("data-sku");
+            theApp.shoppingCart.addItemToCart(theSku);
+            theApp.shoppingCart.removeItemFromCart(theSku);
+            theApp.shoppingCart.initShoppingCart(theSku);
+            // if(sessionStorage.getItem("Quantity") == undefined) {
+            //     sessionStorage.setItem("Quantity", 1);
+            // }
+            // else {
+            //     let newQuantity = sessionStorage.getItem("Quantity");
+            //     newQuantity = parseInt(newQuantity);
+            //     newQuantity = newQuantity + 1;
+            //     sessionStorage.setItem ("Quantity", newQuantity);
+            // }
+
         }
     }
 
@@ -140,13 +152,6 @@ export default class CatalogView{
             //we added the "this" so that it knows to search "this" file for the function
             addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp) ,false);
 
-
-            /* you will need similar code to create
-            an add to cart and a quick view button
-            remember that each button you create should have
-            a data-sku attribute that corresponds to the sku
-            of each product.
-            */
 
             //at the top, we have the new elements within the div created.  Below, 
             //we are appending (or placing) the new elements with the data.

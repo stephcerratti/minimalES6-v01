@@ -15,19 +15,38 @@ export default class ShoppingCart{
         }
     }
 
-    initShoppingCart(){
-        // create the sessionStorage object that will be used
-        // to store the items.
+    initShoppingCart(sku){
+            if (sessionStorage.getItem(sku) !== "undefined") { 
+            if (sessionStorage.quantity) {
+            sessionStorage.quantity = Number(sessionStorage.quantity)+1;
+        }       else {
+                sessionStorage.quantity = 0;
+        }
+    }
+
         console.log("finished creating shopping cart");
     }
 
     addItemToCart(sku){
-        console.log(`bejezuz i am in the shopping cart...
-
-            the sku is 
-
-
-            ${sku}`);
+        console.log(sku);
+        let theSku = sku;
+        if (sessionStorage.getItem(sku) == undefined) {
+            sessionStorage.setItem(sku, 1);
+            return;
+        }
+        //loop through the skus until it finds the matching sku
+        else {
+            for (let i = 0; i <sessionStorage.length; i++) {
+                let currentSku = sessionStorage.key(i);
+                if (currentSku.toString() == theSku.toString()) {
+                    let currentValue = sessionStorage.getItem(currentSku);
+                    currentValue = parseInt(currentValue);
+                    currentValue = currentValue + 1;
+                    sessionStorage.setItem(theSku, currentValue);
+                }
+                
+            }
+        }
     }
 
     removeItemFromCart(sku){
@@ -41,6 +60,8 @@ export default class ShoppingCart{
     clearCart(){
         // clear the entire cart
     }
+
+
 
 
 }

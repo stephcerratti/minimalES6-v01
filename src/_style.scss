@@ -6,10 +6,12 @@ h1 {
 
 h2 {
 	font-size: 2rem;
+	letter-spacing: 10px;
+	font-weight: 100;
 }
 
 .center {
-	text-align: center;
+	margin: 0 auto;
 }
 
 .right {
@@ -49,13 +51,17 @@ h2 {
 	padding: 40px 0px;
 }
 
-.font-raleway {
-	font-family: 'Raleway', sans-serif;
+.green-text {
+	color: #006600;
 }
 
-.font-playfair {
-	font-family: 'Playfair Display', serif;
-	font-weight: 400;
+.font-roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
+.font-robmono {
+	font-family: 'Roboto Mono', monospace;
+	// font-weight: 400;
 }
 
 .uppercase {
@@ -130,6 +136,46 @@ ul.nav {
     font-size: 2rem;
 }
 
+.cartView {
+	top: 25%;
+	bottom: 25%;
+	margin: auto;
+	z-index: 10;
+	display: none;
+	height: 55%;
+	width: 60%;
+	background-color: red;
+	position: fixed;
+}
+
+h6 {
+	font-size: 3rem;
+	text-align: center;
+	color: white;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	text-align: center;
+}
+
+.product-info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 40%;
+}
+
+.cart-item {
+	background-color: white;
+	width: 15%;
+	height: 70%;
+}
 
 /*-----------END OF HEADER----------------------*/
 
@@ -139,8 +185,8 @@ ul.nav {
 	display: flex;
 	align-items: center;
 	height: 47vh;
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/banner-girl.png") center bottom no-repeat, url("assets/images/flower-bkgd.jpg") no-repeat center;
-	background-size: cover, auto 85%, cover;
+	background: url("../images/banner.jpg") no-repeat bottom;
+	background-size: 100%;
 }
 
 .banner-title {
@@ -162,7 +208,7 @@ ul.nav {
 }
 
 .section-title {
-	font-style: italic;
+	font-weight: 100;
 	font-size: 5rem;
 	margin: 30px auto;
 }
@@ -261,8 +307,7 @@ h5 {
 /*************SUBSCRIBE****************/
 
 .signup {
-	background: linear-gradient(rgba(0,0,0,.2) 100%, transparent), url("assets/images/wave-bkgd.jpg") bottom;
-	background-size: 290%;
+	background-color: #006600;
 	min-height: 40vh;
 	margin-bottom: 20px;
 }
@@ -481,7 +526,7 @@ h1 {
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: 2rem;
 }
 
 .margin-bottom {

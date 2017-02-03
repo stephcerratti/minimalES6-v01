@@ -6,8 +6,9 @@
     <title>Aloha Computers</title>
 <!-- ******************* FONTS **************** -->
      <script src="https://use.fontawesome.com/5b03f1e1fd.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200i,400" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,700|Roboto:100,300,400,700" rel="stylesheet">
+
+
     <link rel="stylesheet" href="src/owl.carousel.min.css">
     <link rel="stylesheet" href="src/owl.theme.default.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -15,14 +16,6 @@
 <!-- ****************** CSS ******************* -->
 
     <link rel="stylesheet" type="text/css" href="./dist/app.css">
-   
-    <!-- ********* JAVASCRIPT/JQUERY ************ -->
-  <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="main.js"></script> -->
-
-  
-<!-- **************** OWL CAROUSEL ******************* -->
-
 </head>
 
 <body>
@@ -33,16 +26,29 @@
                 <img class="header-image logo-image" src="images/aloha-logo.svg" alt="Aloha Logo">
             </div>
             <div class="flex-item navbar">
-                <ul class="nav red-text uppercase clearfix">
-                    <li class="menu-item font-raleway">About</li>
-                    <li class="menu-item font-raleway">Shop</li>
-                    <li class="menu-item font-raleway">Featured</li>
-                    <li class="menu-item font-raleway">Updates</li>
+                <ul class="nav red-text font-roboto uppercase clearfix">
+                    <li class="menu-item">About</li>
+                    <li class="menu-item">Shop</li>
+                    <li class="menu-item">Featured</li>
+                    <li class="menu-item">Updates</li>
                 </ul>
             </div>
             <div class="flex-item cart">
                 <input id="cartQuantity" type="text" name="cartIcon" value="0">
                 <img class="header-image cart-image" src="/images/cart-icon.svg">
+            </div>
+            <div class="cartView">
+            	<h6>Your Cart</h6>
+            	<div class="close">X</div>
+            	<div class="productView">
+            		<!-- <div class="cart-image cart-item"></div>
+            		<div class="cart-name cart-item"></div>
+            		<div class="cart-price cart-item"></div>
+            		<div class="cart-quantity cart-item"></div>
+            		<div class="cart-update cart-item">
+            			<button></button> -->
+            		</div>
+            	</div>
             </div>
         </div>
     </header>
@@ -51,20 +57,19 @@
 
 <!--  ***********BANNER*********************** -->
 
-	<section class="banner background-image clearfix">
-		<div class="banner-girl"></div>
-			<div class="white-text banner-title center">
-				<h2 class="font-raleway med-text uppercase margin-bottom">New Collection</h2>
-				<h1 class="banner-title font-playfair">Spring/Summer 2016</h1>
-			</div>
-		</section>
+	<section class="banner background-image">
+		<div class="center white-text font-roboto uppercase">
+			<h2 class="med-text margin-bottom">Want to Buy</h2>
+			<h1 class="banner-title bold">Cool Shit From Best Buy?</h1>
+		</div>
+	</section>
 
 <!--  *******END BANNER********************************* -->
 
 <!--  **********CTA/ABOUT******************************* -->
 
 	<section class="cta section-format">
-			<h3 class="section-title font-playfair grey-text">Hand-Crafted <span class="bold unstyled">Styles</span></h3>
+			<h3 class="section-title font-robmono grey-text">Have you ever wanted to <span class="bold green-text">buy something?</span></h3>
 			<p class="section-text med-grey-text font-raleway">Aloha Apparel Co. sells only the finest ready-to-travel clothing.  Browse our current selection of products or sign-up for updates below.</p>	
 	</section>
 
@@ -72,22 +77,22 @@
 	<section class="categoryLinks">
 		<div class="category-container">
 			<div class="category-item mens rectangle category-background">
-				<h5 class="rectangle-text uppercase white-text font-raleway">Men's</h5>
+				<h5 class="rectangle-text uppercase white-text font-raleway">Laptops/Ultrabooks</h5>
 			</div>
 			<div class="category-item trends square category-background">
-				<h5 class="uppercase white-text font-raleway">Trends</h5>
+				<h5 class="uppercase white-text font-raleway">4K Tv's</h5>
 			</div>
 			<div class="category-item glasses square category-background">
-				<h5 class="uppercase white-text font-raleway">Glasses</h5>
+				<h5 class="uppercase white-text font-raleway">Home Audio</h5>
 			</div>
 			<div class="category-item sale square category-background">
-				<h5 class="uppercase white-text font-raleway">Sale</h5>
+				<h5 class="uppercase white-text font-raleway">Tablets</h5>
 			</div>
 			<div class="category-item bags square category-background">
-				<h5 class="uppercase white-text font-raleway">Bags</h5>
+				<h5 class="uppercase white-text font-raleway">Desktops</h5>
 			</div>
 			<div class="category-item womens rectangle category-background">
-				<h5 class="rectangle-text uppercase white-text font-raleway">Women's</h5>
+				<h5 class="rectangle-text uppercase white-text font-raleway">Cellphones</h5>
 			</div>
 		</div>
 	</section>
@@ -120,7 +125,7 @@
 
 <footer class="footer clearfix">
 
-	<div class="footer-section-right white-text clearfix icons center">
+	<div class="footer-section-right white-text clearfix icons">
 		<ul class="social-icons">
 			<li class="icon left"><i class="fa fa-facebook icon" aria-hidden="true"></i><span class="hidden">Facebook</span></li>
 			<li class="icon left"><i class="fa fa-twitter icon" aria-hidden="true"></i><span class="hidden">Twitter</span></li>
@@ -129,6 +134,7 @@
 			<li class="icon left"><i class="fa fa-google-plus icon" aria-hidden="true"></i><span class="hidden">Google+</span></li>
 		</ul>
 	</div>
+</footer>
 
 
 
