@@ -1,6 +1,7 @@
 h1 {
 	font-size: 5rem;
 	// display:none;
+	letter-spacing: 2px;
 	
 }
 
@@ -37,10 +38,6 @@ h2 {
 	color: #333333;
 }
 
-.med-grey-text {
-	color: #595959;
-}
-
 .light-grey-text {
 	color: #b3b3b3;
 }
@@ -72,9 +69,10 @@ h2 {
 	font-weight: bold;
 }
 
-.unstyled {
-	font-style: normal;
+.light-text {
+	font-weight: 100;
 }
+
 
 /*-----------HEADER--------------------------*/
 .flex-container {
@@ -122,7 +120,7 @@ ul.nav {
 }
 
 #cartQuantity {
-    border-radius: 80px;
+    border-radius: 50%;
     background-color: red;
     position: absolute;
     top: 5px;
@@ -130,7 +128,7 @@ ul.nav {
     z-index: 1;
     padding: 10px;
     color: white;
-     display: none; 
+    display: none; 
     width: 25px;
     height: 25px;
     font-size: 2rem;
@@ -144,8 +142,9 @@ ul.nav {
 	display: none;
 	height: 55%;
 	width: 60%;
-	background-color: red;
+	background-color: white;
 	position: fixed;
+	padding: 15px;
 }
 
 h6 {
@@ -177,6 +176,11 @@ h6 {
 	height: 70%;
 }
 
+.cart-image {
+	height: 75px;
+	width: 75px;
+}
+
 /*-----------END OF HEADER----------------------*/
 
 /*------------BANNER-----------------------------*/
@@ -195,8 +199,12 @@ h6 {
 	z-index: 3;
 }
 
-.margin-bottom {
-	margin-bottom: 5%;
+.click-here {
+	background: transparent;
+	padding: 10px 45px;
+	border: 3px solid green;
+	margin-top: 10px;
+	
 }
 
 /*************CTA/ABOUT*************/
@@ -204,13 +212,14 @@ h6 {
 .section-format {
 	text-align: center;
 	/*border-style: solid;*/
-    padding: 9%;
+    padding: 3%;
 }
 
 .section-title {
 	font-weight: 100;
 	font-size: 5rem;
-	margin: 30px auto;
+	margin: 0px auto 20px auto;
+	letter-spacing: 5px;
 }
 .section-text {
 	font-size: 0.8rem;
@@ -232,33 +241,32 @@ h6 {
 	flex-wrap: wrap;
 }
 
-
 .mens {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/mens-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/laptop-category.jpg");
 }
 
 .trends {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/trends-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/tv-category.jpg");
 	/*margin: 1% 1% 1% 0%;*/
 }
 
 .glasses {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/glasses-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/home-audio-category.jpg");
 	/*margin: 1% 0% 1% 1%;*/
 }
 
 .sale {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/sale-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/tablet-category.jpg");
 	/*margin: 1% 1% 1% 0%;*/
 }
 
 .bags {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/bags-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/desktop-category.jpg");
 	/*margin: 1% 0% 1% 1%;*/
 }
 
 .womens {
-	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("assets/images/womens-category.jpg");
+	background: linear-gradient(rgba(0,0,0,.3) 100%, transparent), url("../images/cell-category.jpg");
 }
 
 .category-background {
@@ -305,16 +313,17 @@ h5 {
 }
 
 /*************SUBSCRIBE****************/
+.margin-bottom {
+	margin-bottom: 50px;
+}
 
 .signup {
 	background-color: #006600;
-	min-height: 40vh;
-	margin-bottom: 20px;
+	min-height: 50vh;
 }
 
 .sub-form {
 	background: white;
-	border-radius: 40px;
 	text-align: center;
 	width: 90%;
 	margin: 45px auto;	
@@ -336,9 +345,8 @@ h5 {
 
 .subscribe {
 	color: white;
-	background: red;
+	background: #006600;
 	padding: 15px 40px;
-	border-radius: 40px;
 	font-size: 2rem;
 }
 
@@ -390,7 +398,7 @@ ul.social-icons {
 
 @media only screen and (min-device-width: 600px) {
 	.section-format {
-		padding: 5%;
+		padding: 3%;
 	}
 
 	.section-title {
@@ -529,9 +537,9 @@ h2 {
 	font-size: 2rem;
 }
 
-.margin-bottom {
-	margin-bottom: 2%;
-}
+// .margin-bottom {
+// 	margin-bottom: 2%;
+// }
 	.flex-container {
 		height: 15vh;
 		margin-top: 0%;
@@ -561,7 +569,6 @@ ul.nav {
 }
 
 .section-text {
-	font-size: 2rem;
 	line-height: 1.9;
 	padding: 2%;
 }

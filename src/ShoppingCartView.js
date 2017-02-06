@@ -24,12 +24,12 @@ export default class ShoppingCartView {
 						// += : equals plus
 						output += `<div id="flex-container" class="product-info">
 									<img class="cart-image" src= "${image}" alt= "${name}">
-									<p class="cart-name"> ${name} </p>
+									
 									<p class="cart-price"> ${price} </p>
 									<form class="cart-quantity"> ${currentQuantity} </form>
 									</div>`;
 					}
-
+									// <p class="cart-name"> ${name} </p>
 				}
 			}
 			$('.cartView').append(output);
