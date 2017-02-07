@@ -140,11 +140,12 @@ ul.nav {
 	margin: auto;
 	z-index: 10;
 	display: none;
-	height: 55%;
+	// height: 55%;
 	width: 60%;
 	background-color: white;
 	position: fixed;
 	padding: 15px;
+	overflow: scroll;
 }
 
 h6 {
@@ -178,7 +179,11 @@ h6 {
 
 .cart-image {
 	height: 75px;
-	width: 75px;
+	width: 90px;
+}
+
+.clear-cart {
+
 }
 
 /*-----------END OF HEADER----------------------*/
@@ -203,9 +208,10 @@ h6 {
 	background: transparent;
 	padding: 10px 45px;
 	border: 3px solid green;
-	margin-top: 10px;
-	
+	margin-top: 10px;	
 }
+
+
 
 /*************CTA/ABOUT*************/
 
@@ -217,7 +223,7 @@ h6 {
 
 .section-title {
 	font-weight: 100;
-	font-size: 5rem;
+	font-size: 3rem;
 	margin: 0px auto 20px auto;
 	letter-spacing: 5px;
 }
@@ -310,6 +316,29 @@ h5 {
 
 .owl-theme .owl-nav [class*=owl-]{
 	display: none !important;
+}
+
+.quick-view {
+	top: 25%;
+	bottom: 25%;
+	margin: auto;
+	z-index: 10;
+	display: none;
+	height: 55%;
+	width: 60%;
+	background-color: white;
+	position: fixed;
+	padding: 15px;
+}
+
+.qv-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	text-align: center;
 }
 
 /*************SUBSCRIBE****************/

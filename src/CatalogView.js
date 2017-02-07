@@ -14,8 +14,7 @@ export default class CatalogView{
     }
 
     initCarousel(){
-
-       
+   
     $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
     rtl:true,
@@ -38,22 +37,6 @@ export default class CatalogView{
 });
 }
   
-        
-        /*
-        You should initialize the carousel here.
-        Right now this code just adds the div tags you would need to add
-        inside the carousel 'container'.
-        Note that this.carousel refers to the div by its class attribute.
-        Since more than one tag can belong to the same class,
-        you either have to give the carousel tag an id as well...or
-        refer to the carousel div tag as this.carousel[0] using bracket
-        notation (since classes mean their *could* be more than one tag
-        belonging to that class) - see line 88 below.
-         */
-
-        
-    // }
-
     onClickCartButton(theApp){
         //console.log the event object
         //console.log(e.target.getAttribute("data-sku"));
@@ -79,7 +62,6 @@ export default class CatalogView{
             //     newQuantity = newQuantity + 1;
             //     sessionStorage.setItem ("Quantity", newQuantity);
             // }
-
         }
     }
 
@@ -90,15 +72,6 @@ export default class CatalogView{
             return ; // do not do anything! there is no data
         }
 
-        /* the loop creates all the elements for each item in the carousel.
-         * it recreates the following structure
-         * <div class="product-wrapper">
-         * <img src="images/stretch-knit-dress.jpg" alt="Image of stretch knit dress" />
-         * <p class="product-type">Dresses</p>
-         * <h3>Stretch Knit Dress</h3>
-         * <p class="price">$169.00</p>
-         * </div>
-          * */
         for (let p=0; p<products.length; p++){
             let product = products[p];
             console.log(product);
@@ -142,6 +115,8 @@ export default class CatalogView{
             quickViewButton.setAttribute("type", "button");
             let quickViewTextNode = document.createTextNode("Quick View");
             quickViewButton.appendChild(quickViewTextNode);
+            quickViewButton.addEventListener("click", this.showQv(this.theApp) , false);
+
 
             let addToCartButton = document.createElement("button");
             addToCartButton.setAttribute("id", `cart_${product.sku}`);
@@ -149,6 +124,7 @@ export default class CatalogView{
             addToCartButton.setAttribute("type", "button");
             let addCartTextNode = document.createTextNode("Add to Cart");
             addToCartButton.appendChild(addCartTextNode);
+            console.log("how many time am i running")
             //we added the "this" so that it knows to search "this" file for the function
             addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp) ,false);
 
@@ -162,17 +138,58 @@ export default class CatalogView{
             newDiv.appendChild(quickViewButton); // added new quickView button
             newDiv.appendChild(addToCartButton);
             this.carousel[0].appendChild(newDiv);
-            //this will create :
-            //  <div>
-            //      <img src="somepicfrombestbuy"></img>
-            //      <p>Buy Me Now</p>
-            //      <h3>Dell Inspirion 12"</h3>
-            //      <p>299.99</p>
-            //      <button id="" data-sku="" type="button">Quick View</button>
-            //      <buton id="" data-sku="" type="button">Add to Cart</button>
-            //  </div> 
+            let qvButtonId = `#qv_${product.sku}`;
+            $(qvButtonId).on("click", function(e){
+                console.log("I clicked on the button");
+                $(".quick-view").fadeIn();
+            $(".qv-close").on("click", function(e) {
+                $(".quick-view").fadeOut();
+            })
+
+            })
+         
         }
         this.initCarousel();
+
+    }
+    showQv(products) {
+        console.log(products);
+        let output = "";
+        let QuickView = $('.quick-view');
+            //maybe insert something here if the shopping cart is empty:
+            //if(sessionStorage.length == 0) {
+                //return ;
+            //  }
+            $(".qv-info").html("");
+
+            for (let i = 0; i < sessionStorage.length; i++) {
+                let currentSku = sessionStorage.key(i); //this is a string
+                let currentQuantity = sessionStorage.getItem(currentSku); //this is a string
+                //we are running a loop within a loop, but there are more efficient ways
+                //to do this: there is an array object method called "filter"
+                for (let p = 0; p < products.length; p++) {
+                    let currentProduct = products[p];
+                    let productSku = currentProduct.sku;
+                        productSku = productSku.toString();
+                    if (productSku == currentSku) {
+                        // let image = currentProduct.image;
+                        // let name = currentProduct.name;
+                        // let price = currentProduct.regularPrice;
+                        // += : equals plus
+                        output += `<div id="flex-container" class="qv-product-info">
+                                    <img class="qv-image" src= "${currentProduct.image}" alt= "${name}">
+                                    
+                                    <p class="qv-price"> ${currentProduct.regularPrice} </p>
+                                    <input id="add" type="number" value=${currentQuantity}>
+                                    <button type="button" class="qv-add">Add to Cart</button>
+                                    </div>
+                                    `;
+
+                    }
+                                    // <p class="cart-name"> ${name} </p>
+                }
+            }
+            $('.qv-info').append(output);
 
     }
 

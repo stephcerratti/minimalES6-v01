@@ -26,9 +26,16 @@ export default class App {
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
         this.initShoppingCart();
+        this.clear = document.getElementById("clear-cart");
+        this.clear = addEventListener("click", this.clickClear(this), false);
         // this.initShoppingCartView();
     }
 
+    // clickClear(theApp) {
+    //     return function(e) {
+    //         theApp.shoppingCart.clearCart(theApp.products);
+    //     }
+    // }
     //in this init function
     initBestBuyWebService(){
         //this app's bestbuywebservice is an instance of the BestBuy Web Service
@@ -90,6 +97,8 @@ export default class App {
         }); 
     }
 }
+
+
 
  // event.data.theApp.ShoppingCart
             // $("#div2").fadeIn("slow");

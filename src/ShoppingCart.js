@@ -16,19 +16,26 @@ export default class ShoppingCart{
     }
 
     initShoppingCart(sku){
-            if (sessionStorage.getItem(sku) !== "undefined") { 
+        if (sessionStorage.getItem(sku) !== "undefined") { 
             if (sessionStorage.quantity) {
-            sessionStorage.quantity = Number(sessionStorage.quantity)+1;
-        }       else {
+                sessionStorage.quantity = Number(sessionStorage.quantity)+1;
+            } else {
                 sessionStorage.quantity = 0;
+            }
         }
-    }
+        //this "helperClick" is just listening for stuff/clicks - will fire all the
+        // jquery on.("click")
+        //document.on.("click")
+        //this."helperClick()"
+        //function showQuickView(item) - pass the item data
+        //a.stringify();
+        // $("")
 
         console.log("finished creating shopping cart");
     }
 
     addItemToCart(sku){
-        console.log(sku);
+        console.log(this);
         let theSku = sku;
         if (sessionStorage.getItem(sku) == undefined) {
             sessionStorage.setItem(sku, 1);
@@ -40,8 +47,8 @@ export default class ShoppingCart{
                 let currentSku = sessionStorage.key(i);
                 if (currentSku.toString() == theSku.toString()) {
                     let currentValue = sessionStorage.getItem(currentSku);
-                    currentValue = parseInt(currentValue);
-                    currentValue = currentValue + 1;
+                    currentValue = parseInt(currentValue)+1;
+                    //currentValue = currentValue + 1;
                     sessionStorage.setItem(theSku, currentValue);
                 }
                 
@@ -50,18 +57,23 @@ export default class ShoppingCart{
     }
 
     removeItemFromCart(sku){
-
+        //reset current quantity to zero
+        //if quantity is zero, display none.
     }
 
     updateQuantityofItemInCart(sku,qty){
 
     }
 
-    clearCart(){
-        // clear the entire cart
-    }
-
-
-
-
+    // clearCart(){
+    //     sessionStorage.clear();
+    //     $("cartView").html("");
+    // }
 }
+  
+
+   
+
+
+
+
