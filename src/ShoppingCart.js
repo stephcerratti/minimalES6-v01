@@ -23,19 +23,15 @@ export default class ShoppingCart{
                 sessionStorage.quantity = 0;
             }
         }
-        //this "helperClick" is just listening for stuff/clicks - will fire all the
-        // jquery on.("click")
-        //document.on.("click")
-        //this."helperClick()"
-        //function showQuickView(item) - pass the item data
-        //a.stringify();
-        // $("")
+
+        sessionStorage.setItem("Quantity", 1);
+        
 
         console.log("finished creating shopping cart");
     }
 
     addItemToCart(sku){
-        console.log(this);
+        console.log("add item to cart");
         let theSku = sku;
         if (sessionStorage.getItem(sku) == undefined) {
             sessionStorage.setItem(sku, 1);
@@ -56,19 +52,20 @@ export default class ShoppingCart{
         }
     }
 
+
     removeItemFromCart(sku){
-        //reset current quantity to zero
-        //if quantity is zero, display none.
+
     }
 
     updateQuantityofItemInCart(sku,qty){
 
     }
 
-    // clearCart(){
-    //     sessionStorage.clear();
-    //     $("cartView").html("");
-    // }
+    clearCart(){
+        console.log("clear cart")    
+        sessionStorage.clear();
+        $(".product-info").html("");
+    }
 }
   
 

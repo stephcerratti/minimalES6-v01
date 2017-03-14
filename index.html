@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Aloha Computers</title>
+
 </head>
 
 <body>
@@ -14,20 +15,23 @@
                 <img class="header-image logo-image" src="images/aloha-logo.svg" alt="Aloha Logo">
             </div>
             <div class="flex-item navbar">
-                <ul class="nav red-text font-roboto uppercase clearfix">
-                    <li class="menu-item">About</li>
-                    <li class="menu-item">Shop</li>
-                    <li class="menu-item">Featured</li>
-                    <li class="menu-item">Updates</li>
+                <ul class="nav font-roboto uppercase clearfix">
+                    <li class="menu-item"><a class="red-text" href="#about">About</a></li>
+                   	<li class="menu-item"> <a class="red-text" href="#shop">Shop</a></li>
+                  	<li class="menu-item"><a class="red-text" href="#featured">Featured</a></li>
+                    <li class="menu-item"><a class="red-text" href="#updates">Updates</a></li>
                 </ul>
             </div>
+
+            <!-- this is the shopping cart icon -->
             <div class="flex-item cart">
-                <input id="cartQuantity" type="text" name="cartIcon" value="0">
-                <img class="header-image cart-image" src="/images/cart-icon.svg">
+                <div id="cart-quantity" class="cart-count"></div>
             </div>
+
+            <!-- this is the popup -->
             <div class="cartView">
             	<h6 class="uppercase grey-text font-roboto bold">Your Cart</h6>
-            	<div class="close">X</div>
+            	<div class="close uppercase font-robmono light-grey-text">Close[X]</div>
             	<div class="productView"></div> 
             	<button type="button" id="clear-cart">Clear Cart</button> 		
             </div>
@@ -42,7 +46,7 @@
 		<div class="center white-text font-roboto uppercase">
 			<h2 class="med-text">Want to Buy</h2>
 			<h1 class="banner-title bold">Cool Shit From Best Buy?</h1>
-			<button type="button" class="click-here font-roboto uppercase white-text" value="Click Here">Click Here</button>
+			<a href="#featured"><button type="button" class="click-here font-roboto uppercase white-text" value="Click Here">Click Here</button></a>
 		</div>
 	</section>
 
@@ -50,13 +54,13 @@
 
 <!--  **********CTA/ABOUT******************************* -->
 
-	<section class="cta section-format">
+	<section class="cta section-format" id="about">
 			<h3 class="section-title font-robmono light-grey-text uppercase">Have you ever wanted to <span class="bold green-text">buy something?</span></h3>
 			<p class="section-text med-grey-text font-raleway">Aloha Apparel Co. sells only the finest ready-to-travel clothing.  Browse our current selection of products or sign-up for updates below.</p>	
 	</section>
 
 <!-- ****************IMAGE LINKS**********************-->
-	<section class="categoryLinks">
+	<section class="categoryLinks" id="shop">
 		<div class="category-container">
 			<div class="category-item mens rectangle category-background">
 				<h5 class="rectangle-text uppercase white-text font-roboto light-text">Laptops/Ultrabooks</h5>
@@ -81,7 +85,7 @@
 
 <!-- **************** BEST BUY API CAROUSEL ******************* -->
 
-<section class="products section-format">
+<section class="products section-format" id="featured">
 	<h3 class="section-title font-robmono light-grey-text uppercase">You Like Stuff?</h3>
 	<p class="light-grey-text uppercase font-roboto margin-bottom">We Got Stuff</p>
 	<div class="owl-carousel owl-theme"></div>
@@ -93,13 +97,13 @@
 
 <!--  ***********SUBSCRIBE******************** -->
 
-	<section class="signup background-image">
+	<section class="signup background-image" id="updates">
 		<div class="section-format">
 			<h3 class="section-title signup-title white-text font-robmono uppercase">Want to Get Constant Updates?</h3>
 			<p class="white-text font-roboto section-text uppercase">Give us your email and we won't stop emailing you</p>
 			<div class="sub-form clearfix">
 				<input class="left email-form" type="email" placeholder="Your Email">
-				<input class="subscribe right" type="submit" value="Subscribe">
+				<input class="subscribe right uppercase" type="submit" value="Submit">
 			</div>
 		</div>
 	</section>
@@ -119,20 +123,20 @@
 			<li class="icon left"><i class="fa fa-google-plus icon" aria-hidden="true"></i><span class="hidden">Google+</span></li>
 		</ul>
 	</div>
-
-
 </footer>
-<script src="https://use.fontawesome.com/5b03f1e1fd.js"></script>
-   	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,700|Roboto:100,300,400,700" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="https://use.fontawesome.com/5b03f1e1fd.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,700|Roboto:100,300,400,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
- <link rel="stylesheet" href="src/owl.carousel.min.css">
+ 	<link rel="stylesheet" href="src/owl.carousel.min.css">
     <link rel="stylesheet" href="src/owl.theme.default.min.css">
 
-<link rel="stylesheet" type="text/css" href="./dist/app.css">
+	<link rel="stylesheet" type="text/css" href="./dist/app.css">
 
-<script src="./src/owl.carousel.min.js"></script>
-<script src="build/bundle.js"></script>
+	<script src="./src/owl.carousel.min.js"></script>
+	<script src="build/bundle.js"></script>
+	<script src="./src/jquery.matchHeight-min.js" type="text/javascript"></script>
 </body>
 </html>

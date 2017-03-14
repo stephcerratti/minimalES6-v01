@@ -8,13 +8,11 @@ export default class ShoppingCartView {
 			//if(sessionStorage.length == 0) {
 				//return ;
 			//	}
-			$(".productView").html("");
+			$(".product-info").html("");
 
 			for (let i = 0; i < sessionStorage.length; i++) {
 				let currentSku = sessionStorage.key(i); //this is a string
 				let currentQuantity = sessionStorage.getItem(currentSku); //this is a string
-				//we are running a loop within a loop, but there are more efficient ways
-				//to do this: there is an array object method called "filter"
 				for (let p = 0; p < products.length; p++) {
 					let currentProduct = products[p];
 					let productSku = currentProduct.sku;
@@ -26,10 +24,11 @@ export default class ShoppingCartView {
 						// += : equals plus
 						output += `<div id="flex-container" class="product-info">
 									<img class="cart-image" src= "${currentProduct.image}" alt= "${name}">
-									
-									<p class="cart-price"> ${currentProduct.regularPrice} </p>
+									<p class="cart-title"> ${currentProduct.brand} </p>
+									<p class="cart-price green-text">$${currentProduct.regularPrice} </p>
 									<input id="add" type="number" value=${currentQuantity}>
-									<button type="button" class="update">Update</button>
+									<button type="button" class="cart-update">Update</button>
+									<button type="button" class="cart-remove">Remove</button>
 									</div>
 									`;
 
@@ -40,16 +39,18 @@ export default class ShoppingCartView {
 			$('.productView').append(output);
 
 	}
-	
-
-	// $(".addToCart").on("click", function (){
- //    var inputField = parseInt($("#cartQuantity").val()); 
- //    // increaSE VALUE BY WHEN CLICK THE BUTTON            
- //     $("#cartQuantity").val(inputField + 1);      
- //     });      
- //     $(".addToCart").click(function(){ 
- //     //shows the input for cart quantities     
- //     $("#cartQuantity").show(); 
- // })
- // });
 }
+	
+// $(document).ready(function(){
+	
+// let cartQuantity = 0;
+
+// $(".addToCart").on("click", function (){
+//     cartQuantity += 1;
+//     console.log("i work");
+//     $(".cart-count").html(cartQuantity);                   
+//     $("#cart-quantity").show(); 
+//  });
+
+// });
+

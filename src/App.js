@@ -27,15 +27,16 @@ export default class App {
         this.initBestBuyWebService();
         this.initShoppingCart();
         this.clear = document.getElementById("clear-cart");
-        this.clear = addEventListener("click", this.clickClear(this), false);
+        this.clear.addEventListener("click", this.clickClear(this), false);
         // this.initShoppingCartView();
+        
     }
 
-    // clickClear(theApp) {
-    //     return function(e) {
-    //         theApp.shoppingCart.clearCart(theApp.products);
-    //     }
-    // }
+    clickClear(theApp) {
+        return function(e) {
+            theApp.shoppingCart.clearCart();
+        }
+    }
     //in this init function
     initBestBuyWebService(){
         //this app's bestbuywebservice is an instance of the BestBuy Web Service

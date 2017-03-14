@@ -222,6 +222,14 @@ the browser.
 DO THIS STUFF with CARE! It's subject to change. As always, slack me with questions or e-mail me at edward.apostol@redacademy.com.
  
 We are here to help!
+
+Broken:
+
+-tried to write similar code to populate the QuickView as my shopping cart, but the data is not showing up.
+-clear cart function- tried 2 different code methods, and was not able to clear the session storage or html.
+-did not have time to create an '93item added to cart'94 popup.
+-cart quantity icon
+-delete/update quantity functionality
  
  
  
