@@ -7,10 +7,8 @@ export default class ShoppingCart{
     constructor(){
         console.log("creating shopping cart");
         if(Storage){
-            // you can create a shoppingCart!
             this.initShoppingCart();
-        } else
-        {
+        } else {
             console.log("Error! SessionStorage not supported in your browser!");
         }
     }
@@ -25,8 +23,6 @@ export default class ShoppingCart{
         }
 
         sessionStorage.setItem("Quantity", 1);
-        
-
         console.log("finished creating shopping cart");
     }
 
@@ -54,10 +50,40 @@ export default class ShoppingCart{
 
 
     removeItemFromCart(sku){
+        console.log("remove item");
+
+        for (let i=0; i<sessionStorage.length; i++) {
+            let currentSku = sessionStorage.key(i);
+            let currentQuantity = sessionStorage.getItem(currentSku);
+            let removeButton = document.getElementById("removeItem"+currentSku);
+
+            if (removeButton !== null) {
+                removeButton.addEventListener("click", this.deleteItem(theApp), false );
+            }
+            console.log(removeButton);
+            }
 
     }
 
+    deleteItem(theApp) {
+        let product = theApp.products;
+        return function(e) {
+            let theSku = e.target.getAttribute("name");
+            console.log(theSku);
+            let item = sessionStorage.getItem(theSku);
+            sessionStorage.removeItem(theSku);
+            theApp.ShoppingCartView.showCartPopup(products, theApp);
+            let newQuantity = sessionStorage.getItem("Quantity");
+            newQuantity = newQuantity - item;
+
+            sessionStorage.setItem("Quantity", newQuantity);
+            let currentValue = sessionStorage.getItem("Quantity");
+            $
+        }
+    }
+
     updateQuantityofItemInCart(sku,qty){
+        
 
     }
 

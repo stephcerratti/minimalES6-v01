@@ -141,25 +141,25 @@ export default class CatalogView{
                 productSku = productSku.toString();
             if (productSku == theSku) {
                 console.log("i am here"); 
-                output +=   `<div id="flex-container" class="qv-info">
-                            <img class="qv-image" src= "${currentProduct.image}" alt= "${name}">
-                            <h4 class="qv-title light-grey-text">${currentProduct.name}</h4>
-                            <p class="qv-price"> ${currentProduct.regularPrice} </p>
-                            <p class="qv-description light-grey-text">${currentProduct.longDescription}</p>
-                            <button type="button" id="qv-${theSku}" class="qv-add">Add to Cart</button>
+                output += `<div class="flex-container qv-info">
+                                <img class="qv-image" src= "${currentProduct.image}" alt= "${name}">
+                                <h4 class="qv-title light-grey-text font-robmono uppercase">${currentProduct.name}</h4>
                             </div>
+                            <div class="qv-text">
+                                <p class="qv-price green-text font-robmono"> ${currentProduct.regularPrice} </p>
+                                <p class="qv-description light-grey-text">${currentProduct.longDescription}</p>
+                            </div>
+                            <button type="button" id="qv-${theSku}" class="qv-add addToCart uppercase font-robmono">Add to Cart</button>
                             `;
             }
-
         }
 
         $('.qv-info').append(output);
 
         if ( document.getElementById(`qv-${theSku}`) === null) { return } else {   
-            console.log("Running before the loop - before the button is clicked");
             let qvCartButton = document.getElementById(`qv-${theSku}`);
             console.log(qvCartButton);
-            qvCartButton.addEventListener("click", this.quickAddToCart(theSku,this.theApp) ,false);
+            qvCartButton.addEventListener("click", this.quickAddToCart(theSku,this.theApp) , false);
         }
     }
 
@@ -173,7 +173,7 @@ export default class CatalogView{
     // console.log('i am here in the quickview cart Button');
         else {
             for (let i = 0; i < sessionStorage.length; i++) {
-                let currentSku = sessionStorage.key(i); //this is a string
+                let currentSku = sessionStorage.key(i);
                 let currentQuantity = sessionStorage.getItem(currentSku);
                 if (theSku.toString() == currentSku.toString()) {
                     currentQuantity = parseInt(currentQuantity) + 1;

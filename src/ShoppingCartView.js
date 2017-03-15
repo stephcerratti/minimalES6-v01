@@ -24,16 +24,15 @@ export default class ShoppingCartView {
 						// += : equals plus
 						output += `<div id="flex-container" class="product-info">
 									<img class="cart-image" src= "${currentProduct.image}" alt= "${name}">
-									<p class="cart-title"> ${currentProduct.brand} </p>
+									<p class="cart-title"> ${currentProduct.manufacturer} </p>
 									<p class="cart-price green-text">$${currentProduct.regularPrice} </p>
 									<input id="add" type="number" value=${currentQuantity}>
 									<button type="button" class="cart-update">Update</button>
-									<button type="button" class="cart-remove">Remove</button>
+									<button type="button" id="removeItem" class="cart-remove">Remove</button>
 									</div>
 									`;
 
 					}
-									// <p class="cart-name"> ${name} </p>
 				}
 			}
 			$('.productView').append(output);
