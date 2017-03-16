@@ -1,9 +1,10 @@
 export default class ShoppingCartView {
 	constructor(){}
-	showCartPopup(products) {
+	showCartPopup(theApp,products) {
 		console.log(products);
 		let output = "";
 		let CartView = $('.cartView');
+
 			//maybe insert something here if the shopping cart is empty:
 			//if(sessionStorage.length == 0) {
 				//return ;
@@ -31,15 +32,20 @@ export default class ShoppingCartView {
 									<button type="button" id="removeItem" class="cart-remove">Remove</button>
 									</div>
 									`;
-
 					}
 				}
 			}
 			$('.productView').append(output);
 
+			let removeButton = document.getElementById("removeItem");
+        	if (removeButton !== null) {
+                removeButton.addEventListener("click", theApp.clickRemove(theApp), false );
+                console.log("i am in the removebutton");
+            }
 	}
 }
-	
+	// _${currentSku}
+
 // $(document).ready(function(){
 	
 // let cartQuantity = 0;

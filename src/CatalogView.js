@@ -141,7 +141,7 @@ export default class CatalogView{
                 productSku = productSku.toString();
             if (productSku == theSku) {
                 console.log("i am here"); 
-                output += `<div class="flex-container qv-info">
+                output += `<div class="qv-flex-container qv-info">
                                 <img class="qv-image" src= "${currentProduct.image}" alt= "${name}">
                                 <h4 class="qv-title light-grey-text font-robmono uppercase">${currentProduct.name}</h4>
                             </div>

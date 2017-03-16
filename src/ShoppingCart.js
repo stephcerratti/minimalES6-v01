@@ -49,36 +49,41 @@ export default class ShoppingCart{
     }
 
 
-    removeItemFromCart(sku){
+    removeItemFromCart(theApp,sku){
         console.log("remove item");
 
         for (let i=0; i<sessionStorage.length; i++) {
             let currentSku = sessionStorage.key(i);
             let currentQuantity = sessionStorage.getItem(currentSku);
-            let removeButton = document.getElementById("removeItem"+currentSku);
 
-            if (removeButton !== null) {
-                removeButton.addEventListener("click", this.deleteItem(theApp), false );
-            }
-            console.log(removeButton);
+            this.deleteItem(theApp);
+            console.log("remove item loop of i");
             }
 
     }
 
     deleteItem(theApp) {
-        let product = theApp.products;
-        return function(e) {
+        let products = theApp.products;
+        console.log("did i run the deleteitem outside return");
+        return function() {
+            console.log("did i run the deleteitem");
             let theSku = e.target.getAttribute("name");
             console.log(theSku);
-            let item = sessionStorage.getItem(theSku);
+            let deletedItem = sessionStorage.getItem(theSku);
             sessionStorage.removeItem(theSku);
             theApp.ShoppingCartView.showCartPopup(products, theApp);
             let newQuantity = sessionStorage.getItem("Quantity");
-            newQuantity = newQuantity - item;
+            newQuantity = newQuantity - deletedItem;
 
             sessionStorage.setItem("Quantity", newQuantity);
             let currentValue = sessionStorage.getItem("Quantity");
-            $
+            $("#cart-quantity").val(currentValue);
+            if  (parseInt(currentValue) == 0) {
+                sessionStorage.clear();
+                $("#cart-quantity").hide();
+                // $(document).on("click", ".cart", this, function())
+
+            }
         }
     }
 

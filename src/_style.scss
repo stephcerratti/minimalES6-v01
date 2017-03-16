@@ -43,7 +43,7 @@ h2 {
 
 .red-text {
 	color: #ff0000;
-	font-size: 13px;
+	font-size: 0.7em;
 	padding: 40px 0px;
 }
 
@@ -156,7 +156,7 @@ li a:visted {
 	z-index: 10;
 	display: none;
 	// height: 55%;
-	width: 60%;
+	width: 80%;
 	background-color: white;
 	position: fixed;
 	padding: 15px;
@@ -167,6 +167,7 @@ h6 {
 	font-size: 3rem;
 	text-align: center;
 	color: white;
+	margin-top: 0.5em;
 }
 
 .close {
@@ -174,6 +175,7 @@ h6 {
 	top: 10px;
 	right: 10px;
 	height: 20px;
+	font-size: 1em;
 	background-color: white;
 	text-align: center;
 }
@@ -181,8 +183,10 @@ h6 {
 .product-info {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 	align-items: center;
 	height: 40%;
+	margin: 1em 0;
 }
 
 .cart-item {
@@ -197,6 +201,8 @@ h6 {
 }
 
 .clear-cart {
+	margin: 0 auto;
+	bottom: 10px;
 
 }
 
@@ -380,7 +386,6 @@ h5 {
 .qv-image {
 	height: 13em;
 }
-
 .qv-title {
 	margin: 1em;
 }
@@ -393,10 +398,10 @@ h5 {
 	margin: 1em 0.5em 1.5em 0.5em;
 }
 
-.flex-container {
+.qv-flex-container {
 	display: flex;
 	justify-content: space-around;
-	flex-wrap: wrap;
+	// flex-wrap: wrap;
 	border-bottom: 1px solid #b3b3b3;
 }
 
@@ -612,9 +617,21 @@ h2 {
 	font-size: 2rem;
 }
 
+.red-text {
+	// font-size: 1.5em;
+}
+
 .flex-container {
 	height: 15vh;
 	margin-top: 0%;
+}
+
+.logo {
+	width: 10%;
+}
+
+.cart{
+	margin-top: 6px;
 }
 
 .header-image {
@@ -623,9 +640,15 @@ h2 {
 	position: relative;
 }
 
+
 ul.nav {
 	margin-top: 0%;
 }
+
+.menu-item {
+    font-size: 2em;
+    padding: 0 10px;
+ }
 
 #cartQuantity {
     top: 10px;
@@ -640,8 +663,12 @@ ul.nav {
 	height: 80vh;
 }
 
+.banner-title {
+	font-size: 3em;
+}
+
 .section-text {
-	font-size: 2rem;
+	font-size: 1.5em;
 	line-height: 1.9;
 	padding: 2%;
 }
@@ -658,8 +685,33 @@ ul.nav {
 	margin: 1% 0%;
 }
 
-.signup-title {
+.quick-view {
+	top: 15%;
+	bottom: 25%;
 	margin: 0 auto;
+	z-index: 10;
+	display: none;
+	height: 60vh;
+	width: 60%;
+	background-color: white;
+	position: fixed;
+	padding: 15px;
+}
+
+.qv-flex-container {
+	padding-bottom: 10px;
+}
+
+.qv-image {
+	height: 10em;
+}
+
+.qv-title {
+	margin-top: 3em;
+}
+
+.signup-title {
+	margin: 1em auto 0.1em auto;
 	font-size: 2.5rem;
 }
 

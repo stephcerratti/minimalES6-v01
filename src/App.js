@@ -37,6 +37,16 @@ export default class App {
             theApp.shoppingCart.clearCart();
         }
     }
+
+    clickRemove(theApp) {
+        return function(e) {
+        
+            let theSku = e.target.getAttribute("data-sku");
+            theApp.shoppingCart.removeItemFromCart(theApp,theSku);
+            console.log("i am here in the cickRemove");
+        }
+    }
+
     //in this init function
     initBestBuyWebService(){
         //this app's bestbuywebservice is an instance of the BestBuy Web Service
@@ -75,9 +85,9 @@ export default class App {
         }
 
         this.showCatalog();
-}
+    }
+    
     showCatalog() {
-
         // populate the catalog only if there are products
         if (this.productData != null) {
             //pass the products to the carousel
@@ -90,7 +100,7 @@ export default class App {
         $(document).on('click', '.cart', this, function(event){
             console.log(event.data);
             let theApp = event.data;
-            theApp.shoppingCartView.showCartPopup(theApp.products);
+            theApp.shoppingCartView.showCartPopup(theApp,theApp.products);
             $(".cartView").fadeIn();     
         })
          $(document).on('click', '.close', this, function(event){
@@ -99,10 +109,5 @@ export default class App {
     }
 }
 
-
-
- // event.data.theApp.ShoppingCart
-            // $("#div2").fadeIn("slow");
-            // $("#div3").fadeIn(3000);
 
 
