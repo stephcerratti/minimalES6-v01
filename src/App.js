@@ -40,10 +40,9 @@ export default class App {
 
     clickRemove(theApp) {
         return function(e) {
-        
             let theSku = e.target.getAttribute("data-sku");
             theApp.shoppingCart.removeItemFromCart(theApp,theSku);
-            console.log("i am here in the cickRemove");
+            console.log("i am here in the clickRemove");
         }
     }
 

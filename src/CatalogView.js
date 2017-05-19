@@ -59,12 +59,6 @@ export default class CatalogView{
             newImg.setAttribute("alt", `${product.name}`); // this works too
             newImg.setAttribute("data-sku",product.sku);
 
-            // create a new Paragraph to show a description
-            // let newPara = document.createElement("p");
-            // newPara.setAttribute("class","product-type");
-            // let newParaTextNode = document.cproduct.longDescriptionreateTextNode();
-            // newPara.appendChild(newParaTextNode);
-
             let newH3Tag = document.createElement("h3");
             newH3Tag.setAttribute("class", "light-grey-text product-name font-robmono");
             let newH3TagTextNode = document.createTextNode(product.name);
