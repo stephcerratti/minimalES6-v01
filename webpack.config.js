@@ -19,6 +19,7 @@ const join = require('path').join;
 const resolve = require('path').resolve;
 const webpack = require('webpack');
 
+
 /*
 // PATHS defines an object that will reference appropriate directories
 // that will be built by webpack. Optional. Of course you can
